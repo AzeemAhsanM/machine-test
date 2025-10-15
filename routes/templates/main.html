@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Flight Routes System</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 2em;
+      }
+      .section {
+        border: 1px solid #ccc;
+        padding: 1em;
+        margin-bottom: 1em;
+        border-radius: 8px;
+      }
+      h2,
+      h3 {
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Flight Route</h1>
+
+    <div class="section">
+      <h2>Add New Airport</h2>
+      <form method="post">
+        {% csrf_token %} {{ route_form.as_p }}
+        <button type="submit" name="add_route_submit">Add Route</button>
+      </form>
+    </div>
+
+    <div class="section">
+      <h2>1. Find the Nth Left or Right Node</h2>
+      <form method="post">
+        {% csrf_token %} {{ search_form.as_p }}
+        <button type="submit" name="search_submit">Search</button>
+      </form>
+
+      {% if nth_node_result %}
+      <h3>
+        Search Result:
+        <span style="color: green">{{ nth_node_result.code }}</span>
+      </h3>
+      {% endif %} {% if search_error %}
+      <h3>Search Result: <span style="color: red">{{ search_error }}</span></h3>
+      {% endif %}
+    </div>
+
+    <div class="section">
+      <h2>2. Longest Route</h2>
+      {% if longest_route %}
+      <p>
+        The longest single route is from
+        <b>{{ longest_route.parent.code }}</b> to
+        <b>{{ longest_route.code }}</b> with a distance of
+        <b>{{ longest_route.duration }} km</b>.
+      </p>
+      {% else %}
+      <p>No routes available.</p>
+      {% endif %}
+
+      <hr />
+
+      <h2>3. Shortest Route</h2>
+      {% if shortest_route %}
+      <p>
+        The shortest single route is from
+        <b>{{ shortest_route.parent.code }}</b> to
+        <b>{{ shortest_route.code }}</b> with a distance of
+        <b>{{ shortest_route.duration }} km</b>.
+      </p>
+      {% else %}
+      <p>No routes available.</p>
+      {% endif %}
+    </div>
+  </body>
+</html>
