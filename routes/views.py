@@ -19,7 +19,7 @@ def flight_routes_view(request):
             n_level = search_form.cleaned_data['n_level']
             position = search_form.cleaned_data['position']
             
-            # This is the traversal logic
+            # the traversal logic
             current_node = start_airport
             found = True
             for i in range(n_level):
@@ -27,7 +27,7 @@ def flight_routes_view(request):
                     # Find the next child in the chain
                     current_node = current_node.children.get(position=position)
                 except Airport.DoesNotExist:
-                    # If any child is not found, we stop and show an error
+                    # If any child is not found, stop and show an error
                     search_error = f"No {i+1}-level '{position}' node found."
                     found = False
                     break
