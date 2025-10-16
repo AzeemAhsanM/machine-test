@@ -1,39 +1,40 @@
-Setup and Installation
+# Setup and Installation
 
 To run this project locally, follow these steps:
 
+'''
 Clone the repository:
-
- git clone (https://github.com/your-username/your-repository-name.git)
- 
- cd your-repository-name
+git clone (https://github.com/your-username/your-repository-name.git)
+cd your-repository-name
+'''
 
 Create and activate a virtual environment:
 
 Install the required dependencies:
-
- pip install -r requirements.txt
+'pip install -r requirements.txt'
 
 Apply the database migrations:
-
- python manage.py migrate
+'''
+python manage.py migrate
+'''
 
 Start the development server:
-
+'''
  python manage.py runserver
+'''
 
 The application will be available at http://127.0.0.1:8000/.
 
-How to Use the Application
+# How to Use the Application
 
--Adding the First (Root) Airport:
+### Adding the First (Root) Airport:
 
-   1.In the "Add New Airport" form, enter a unique Code (e.g., A).
-   2.Leave the Parent, Position, and Duration fields blank.
-   3.Click "Add Route".
+   1. In the "Add New Airport" form, enter a unique Code (e.g., A).
+   2. Leave the Parent, Position, and Duration fields blank.
+   3. Click "Add Route".
 
 
--Adding a Child Airport:
+### Adding a Child Airport:
 
    1.Enter a new unique Code (e.g., B).
    2.Select the Parent airport from the dropdown (e.g., A).
@@ -42,7 +43,7 @@ How to Use the Application
    5.Click "Add Route".
 
 
--Searching for a Node:
+### Searching for a Node:
 
    1.Use the "Find the Nth Left or Right Node" form.
    2.Select a Starting Airport.
