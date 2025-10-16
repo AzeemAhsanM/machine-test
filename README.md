@@ -2,11 +2,9 @@
 
 To run this project locally, follow these steps:
 
-'''
 Clone the repository:
-git clone (https://github.com/your-username/your-repository-name.git)
-cd your-repository-name
-'''
+'git clone (https://github.com/your-username/your-repository-name.git)'
+'cd your-repository-name'
 
 Create and activate a virtual environment:
 
@@ -14,12 +12,10 @@ Install the required dependencies:
 'pip install -r requirements.txt'
 
 Apply the database migrations:
-'''
-python manage.py migrate
-'''
+'python manage.py migrate'
 
 Start the development server:
- python manage.py runserver
+'python manage.py runserver'
 
 
 The application will be available at http://127.0.0.1:8000/.
